@@ -1,0 +1,14 @@
+{
+  "name": "Flora's Cakes",
+  "short_name": "Flora's Cakes",
+  "description": "Homemade custom cakes in Borivali West, Mumbai.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff6ec",
+  "theme_color": "#8a44d6",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
