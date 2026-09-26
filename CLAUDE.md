@@ -18,50 +18,35 @@ Then visit `http://localhost:8000` (or port shown).
 
 ## Architecture
 
-Single-page responsive website (`index.html`) for Flora's Cakes bakery business.
-
-**Tech Stack:**
-- Bootstrap 3 (responsive grid)
-- jQuery (DOM manipulation)
-- Owl Carousel (reviews slider, service carousel)
-- Isotope (gallery filtering)
-- Magnific Popup (lightbox)
-
-**Sections:**
-- Hero with sidebar navigation and 6 service cards
-- Gallery with category filtering (special, birthday, cupcakes, jaincakes)
-- Reviews carousel (auto-rotating testimonials)
-- Footer with contact info
-
-## CSS Organization
-
-Custom styles are split into focused files:
+Single-page site (`index.html`) for Flora's Cakes, a home bakery in Borivali West, Mumbai.
+No framework, no build step, no third-party JavaScript. Fonts come from Google Fonts
+(Shrikhand for headings, Instrument Sans for everything else).
 
 | File | Purpose |
 |------|---------|
-| `css/style.css` | Base template styles (do not modify) |
-| `css/custom-fonts.css` | Typography (Alkatra for headings, Lato for body) |
-| `css/hero-cards.css` | Service cards with zoom hover effects |
-| `css/reviews-slider.css` | Review carousel styling and star animations |
-| `css/smooth-scroll.css` | Smooth scrolling behavior |
-| `styles/maincolors.css` | Brand color definitions |
+| `index.html` | All markup, the Bakery JSON-LD, and an inline SVG sprite (logo rosette and icons) |
+| `styles.css` | All styles. Phone first, with layouts at 760px and 1040px |
+| `app.js` | The Plan your cake message builder, the gallery reveal, and the photo lightbox |
+| `favicon.svg`, `apple-touch-icon.png`, `icon-512.png`, `site.webmanifest` | Icons and install metadata |
+| `img/cakes/cakeN-1200.webp` | Full photos, 1200px on the long side, used in the lightbox and the hero |
+| `img/cakes/cakeN-600.webp` | 600px square crops used in the gallery and the cake cards |
+| `img/og.jpg` | Social preview image |
 
-**Brand Colors:**
-- Primary Pink: `#d4145a`
-- Text: `#2d2d2d`
-- Gold (stars): `#f39c12`
+**Sections:** hero, What we bake (4 cards), Custom Cakes in Mumbai gallery (12 shown, 36 in
+total), Plan your cake, Visit us, footer. Phones get a fixed Call and WhatsApp bar.
 
-## JavaScript
+**Colours** (all pairs pass WCAG 2.2 AA): cream `#fff6ec`, plum text `#2a1238`, purple
+`#8a44d6`, deep purple `#5b22a3`, orange `#eb810a` (buttons only, always with a plum
+border and plum text), lilac `#f1e8fd`.
 
-- `js/custom.js` - Main functionality: smooth scroll, carousel init, gallery filtering, lightbox
-- `js/plugins.js` - Bundled jQuery plugins (Owl Carousel, Isotope, Magnific Popup)
+## Adding content
 
-Gallery categories are defined via CSS classes on gallery items: `.special`, `.birthday`, `.cupcakes`, `.jaincakes`
+**A new cake photo:** make two WebP files from the original, `cakeN-1200.webp` (long side
+1200px) and `cakeN-600.webp` (600px square, centre crop), put them in `img/cakes/`, then add
+an `<li class="more" hidden>` entry to the gallery in `index.html` with a descriptive `alt`.
+The gallery button text says how many cakes there are, so update "See all 36 cakes" too.
 
-## Adding Content
+**WhatsApp number:** it appears in `app.js` (`WHATSAPP_NUMBER`) and in every `wa.me` link in
+`index.html`. Change all of them together.
 
-**Gallery images:** Add to `img/gallery/`, reference in index.html with appropriate category class
-
-**Reviews:** Add new `.review-item` elements within the Owl Carousel container in index.html
-
-**Navigation:** Anchor links use smooth scroll (e.g., `#gallery`, `#reviews`)
+**Hosting:** the site is also published on MakeMySiteLive at flora.makemysitelive.com.

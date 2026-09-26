@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo-f.png" alt="Flora's Cakes" width="150">
+  <img src="favicon.svg" alt="Flora's Cakes" width="120">
   <br><br>
   <strong>Homemade with Love</strong>
   <br>
@@ -17,7 +17,7 @@
 | | | |
 |:---:|:---:|:---:|
 | Birthday Cakes | Wedding Cakes | Themed Cakes |
-| Cupcakes | Cake Popsicles | Jain Cakes |
+| Cupcakes | Cake Popsicles | Special Cakes |
 
 *All cakes are 100% vegetarian with fresh ingredients*
 
@@ -28,7 +28,7 @@
 ```
 📱 Responsive Design
 🖼️ Image Gallery
-⭐ Reviews Carousel
+🎂 Plan your cake: builds the WhatsApp order message
 💬 WhatsApp Ordering
 📞 Click-to-Call
 🎨 Smooth Animations
@@ -41,8 +41,7 @@
 <p>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap">
-  <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jquery&logoColor=white" alt="jQuery">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
 </p>
 
 ---
