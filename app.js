@@ -1,6 +1,19 @@
 "use strict";
 
-const WHATSAPP_NUMBER = "918433657212";
+/**
+ * The shop number, kept in pieces and joined only in the browser, so bots
+ * that scan the page for phone numbers cannot read it. The HTML never holds it.
+ */
+const PHONE_PARTS = ["91", "90292", "08698"];
+const WHATSAPP_NUMBER = PHONE_PARTS.join("");
+const PHONE_DISPLAY = `+${PHONE_PARTS[0]} ${PHONE_PARTS[1]} ${PHONE_PARTS[2]}`;
+
+/** Points every call and WhatsApp link at the number, and shows it where the page asks for it. */
+function fillContactLinks() {
+  document.querySelectorAll("[data-tel]").forEach((link) => { link.href = `tel:+${WHATSAPP_NUMBER}`; });
+  document.querySelectorAll("[data-wa]").forEach((link) => { link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${link.dataset.wa}`; });
+  document.querySelectorAll("[data-num]").forEach((el) => { el.textContent = PHONE_DISPLAY; });
+}
 
 /**
  * Read the planner form and return the WhatsApp message a customer would send.
@@ -98,6 +111,7 @@ function setUpLightbox() {
   dialog.addEventListener("close", () => { image.removeAttribute("src"); });
 }
 
+fillContactLinks();
 setUpPlanner();
 setUpGalleryReveal();
 setUpLightbox();
